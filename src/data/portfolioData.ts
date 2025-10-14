@@ -179,35 +179,35 @@ export const portfolioData: PortfolioData = {
   achievements: [
     {
       text: "Best Outgoing Student of the Department (CSE)",
-      image: "public/assets/Shield.jpg", 
+      image: "assets/Shield.jpg", 
     },
     {
       text: "SIH 2024 Finalist for the project titled 'TollTag - AI based Map Matching' proposed by Indian Space Research Organization(ISRO)",
-      image: "public/assets/SIH.jpg",
+      image: "assets/SIH.jpg",
     },
     {
       text: "Certificate of Recognition for the Innovative Concept on 'Bronchoscopy-CT Scan Integration for Precise Navigation' presented at L&T Technology Services",
-      image: "public/assets/techgium.jpg",
+      image: "assets/techgium.jpg",
     },
    {
       text: "Attended CATC CUM IGC RDC Launch Camp by 4TamilNadu Battalion NCC",
-      image: "public/assets/NCC.jpg",
+      image: "assets/NCC.jpg",
     },
     {
       text: "Throwball team Winner & Best Dance Award by CATC Camp of NCC",
-      image: "public/assets/NCC_Medal.jpg",
+      image: "assets/NCC_Medal.jpg",
     },
     {
       text: "Secured runner-up for the Business Plan event, NICHE'22 by the Department of MBA, SREC",
-      image: "public/assets/Business.jpg",
+      image: "assets/Business.jpg",
     },
     {
       text: "Secured 3rd prize for the Mathematical Model event conducted at SREC",
-      image: "public/assets/Math.jpg",
+      image: "assets/Math.jpg",
     },
     {
       text: "Table tennis winner in Covai ties and runner-up in district-level zonal match",
-      image: "public/assets/TT.jpg",
+      image: "assets/TT.jpg",
     }
   ],
   extracurriculars: [
@@ -251,7 +251,7 @@ export const portfolioData: PortfolioData = {
       title: "IBM TechXcange Program 2025 Level 2",
       description: "Advanced training on Agentic AI capabilities using IBM watsonx Orchestrate. Focused on building and deploying autonomous AI agents.",
       date: "Spring 2025",
-      image: "public/assets/ai-workshop-level-2.png"
+      image: "assets/ai-workshop-level-2.png"
     }
   ],
   publications: [
