@@ -74,6 +74,11 @@ body {
   font-family: 'Dancing Script', cursive;
 }
 
+.bio-text {
+  white-space: pre-wrap; 
+  font-family: inherit; 
+}
+
 /* Full Screen Star Canvas */
 .star-canvas-full {
   position: fixed;
