@@ -73,9 +73,11 @@ export const portfolioData: PortfolioData = {
   intro: {
     name: "Monica R",
     title: "Software Engineer & AI Enthusiast",
-    bio: `I’m a Software Engineer who builds powerful, reliable software designed to scale. The work involves taking full-stack tech and database solutions to deliver high-availability platforms that are consistently resilient and performant.   
-    My core specialization is Applied AI where I develop Generative AI and Agentic Architectures leveraging modern AI tools, to transform complex enterprise challenges into autonomous systems—intelligent software that learns and optimizes itself.
-    Explore below to dive into my full technical journey and project deep dives.`,    
+    bio: `I’m a Software Engineer who builds powerful, reliable software designed to scale. The work involves taking full-stack tech and database solutions to deliver high-availability platforms that are consistently resilient and performant.
+
+      My core specialization is Applied AI where I develop Generative AI and Agentic Architectures leveraging modern AI tools, to transform complex enterprise challenges into autonomous systems—intelligent software that learns and optimizes itself.
+      
+      Explore below to know more!`,    
     profilePic: "assets/monica.png"
       },
   experience: [
