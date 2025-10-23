@@ -102,7 +102,8 @@ export const IntroSection = ({ name, title, bio, profilePic, theme }: IntroSecti
         {title}
       </p>
 
-      <p className={`text-lg max-w-2xl mx-auto leading-relaxed ${theme === 'dark' ? 'text-white/90' : 'text-gray-600'}`}>
+      <p className={`text-lg max-w-2xl mx-auto leading-relaxed ${theme === 'dark' ? 'text-white/90' : 'text-gray-600'}`}
+        style={{ whiteSpace: 'pre-wrap' }}>
         {bio}
       </p>
     </div>
