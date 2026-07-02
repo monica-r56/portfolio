@@ -76,13 +76,19 @@ export const portfolioData: PortfolioData = {
     bio: `I’m a Software Engineer who builds powerful, reliable software designed to scale. The work involves taking full-stack tech and database solutions to deliver high-availability platforms that are consistently resilient and performant.
       My core specialization is Applied AI where I develop Generative AI and Agentic Architectures leveraging modern AI tools, to transform complex enterprise challenges into autonomous systems—intelligent software that learns and optimizes itself.    
       Explore below to know more!`,    
-    profilePic: "assets/monica.png"
+    profilePic: "assets/monica.jpeg"
       },
   experience: [
+     {
+      title: "Software Development Engineer",
+      company: "Autodesk",
+      period: "April '25 - Present",
+      description: "Engineered high-impact AI automations at Autodesk using Python, n8n and AWS. Architected core org-level systems, including Autobots and VIP Escalation Insights, eliminating manual workflows across business units. These autonomous architectures scaled enterprise processes, driving significant cost reductions and saving 10 hours weekly."
+    },
     {
       title: "Associate Software Engineer",
       company: "Talview",
-      period: "October '25 - Present",
+      period: "October '25 - March '25",
       description: "Working in the backend team, I focus on building and optimizing robust services for Talview's Workflow Automation Tools. This includes designing scalable APIs and ensuring seamless data flow for enterprise solutions."
     },
     {
@@ -127,13 +133,13 @@ export const portfolioData: PortfolioData = {
     },
     {
       category: "Database & Data Engineering",
-      skills: ["MySQL", "PostgreSQL", "MongoDB", "ETL Pipeline", "Data cleaning"],
+      skills: ["MySQL", "PostgreSQL", "MongoDB", "Data Science","ETL Pipeline", "Data cleaning"],
       icon: Database,
       accent: 'bg-yellow-200/50 text-yellow-700 dark:bg-yellow-800/30 dark:text-yellow-300'
     },
     {
       category: "AI & ML",
-      skills: ["Supervised & Unsupervised Learning", "Neural Networks", "Deep Learning", "Natural Language Processing", "RAG", "Generative AI", "LLMs", "Agentic AI", "Ollama", "Chatbot Development", "Computer Vision", "Image Processing"],
+      skills: ["Supervised & Unsupervised Learning", "Neural Networks", "Deep Learning", "Natural Language Processing", "RAG", "Generative AI", "LLMs", "Agentic AI", "n8n", "Power Automate", "Crew AI", "Ollama", "Chatbot Development", "Computer Vision", "Image Processing"],
       icon: Cpu,
       accent: 'bg-purple-200/50 text-purple-700 dark:bg-purple-800/30 dark:text-purple-300'
     },
@@ -145,12 +151,17 @@ export const portfolioData: PortfolioData = {
     },
     {
       category: "Tools & Platforms",
-      skills: ["Git", "GitHub", "Docker", "Kubernetes", "Kaggle", "Hugging Face", "Metabase", "Airflow", "Meltano", "VS Code", "Webstorm"],
+      skills: ["Git", "GitHub", "Docker", "Kubernetes", "Kaggle", "Hugging Face", "Metabase", "Airflow", "Meltano", "AWS Cloud Services", "Azure", "Webstorm"],
       icon: Zap,
       accent: 'bg-pink-200/50 text-pink-700 dark:bg-pink-800/30 dark:text-pink-300'
     }
   ],
   projects: [
+    {
+      title: "CodeMate - Voice-Native Pair Programmer",
+      description: "Developed a voice-first AI agent extension embedded in IDEs, eliminating context-switching friction and enabling truly hands-free, conversational development. Used Multi-agent architecture connecting with essential MCPs such as GitHub, Notion, and external knowledge source that are stored as embedded semantic chunks, which enables real-time STT and TTS from LLMs.",
+      tech: ["Python", "JavaScript", "AI Agents", "Large Language Models", "Model Context Protocol","Gemini"]
+    },
     {
       title: "AI-powered Chatbot for Education & Opportunities for School Dropouts in Indian regional languages",
       description: "Developed an AI chatbot for Indian school dropouts with regional-language support, career guidance, and book-based Q&A using lightweight NLP, sentence transformers, and RAG for context-aware, multilingual interactions.",
@@ -179,6 +190,10 @@ export const portfolioData: PortfolioData = {
   ],
 
   achievements: [
+    {
+      text: "GSSoC'26 Open Source Contributor & Ambassador",
+      image: "assets/gssoc.png", 
+    },
     {
       text: "Best Outgoing Student of the Department (CSE)",
       image: "assets/Shield.jpg", 
@@ -250,6 +265,30 @@ export const portfolioData: PortfolioData = {
   ],
   events: [
     {
+      title: "Google Cloud Builder Day 2026",
+      description: "Built and experimented with google cloud products which helped in building AI agents, deploying the agents, and explored new launched products",
+      date: "Spring 2026",
+      image: "assets/googlecloudstage.jpeg"
+    },
+    {
+      title: "Atlassian Unleash",
+      description: "Atlassian's flagship event - shaping the future of AI powered teamwork and collaboration, with hands on experience and challenges.",
+      date: "Spring 2025",
+      image: "assets/unleash.jpg"
+    },
+    {
+      title: "AWS Summit Bengaluru - Technical Edition",
+      description: "Open Source Development and Contributions are far beyond projects which gives a massive exposure to real world systems.",
+      date: "Spring 2025",
+      image: "assets/awssummit.jpeg"
+    },
+    {
+      title: "TechSync: OSCode x GitHub Education at Microsoft Research",
+      description: "Open Source Development and Contributions are far beyond projects which gives a massive exposure to real world systems.",
+      date: "Spring 2025",
+      image: "assets/msr.png"
+    },
+    {
       title: "IBM TechXcange Program 2025 Level 2",
       description: "Advanced training on Agentic AI capabilities using IBM watsonx Orchestrate. Focused on building and deploying autonomous AI agents.",
       date: "Spring 2025",
@@ -261,7 +300,7 @@ export const portfolioData: PortfolioData = {
       title: "AI based Chatbot for Students using RAG in Large Language Models",
       journal: "IEEE's 6th International Conference on Smart Electronics and Communication (ICOSEC)",
       year: "2025",
-      link: "#"
+      link: "https://ieeexplore.ieee.org/document/11459535"
     },
     {
       title: "Automated Detection and Prediction of Brain Tumor using ML",
