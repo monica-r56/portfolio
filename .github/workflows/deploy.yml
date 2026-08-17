@@ -2,41 +2,65 @@ name: CI/CD Deploy to GitHub Pages
 
 on:
   push:
-    branches: [ "main" ] 
+    branches: ["main"]
   workflow_dispatch:
 
 jobs:
   build_and_deploy:
     runs-on: ubuntu-latest
-    
+
     permissions:
       contents: write
-      pages: write 
+      pages: write
       id-token: write
 
     env:
-      NODE_VERSION: '20'
-      BUILD_DIR: 'dist' 
+      NODE_VERSION: "20"
+      BUILD_DIR: "dist"
 
     steps:
+      # --------------------------------------------------
+      # Checkout repository
+      # --------------------------------------------------
       - name: Checkout Repository
         uses: actions/checkout@v4
 
+      # --------------------------------------------------
+      # Setup Node.js
+      # --------------------------------------------------
       - name: Set up Node.js
         uses: actions/setup-node@v4
         with:
           node-version: ${{ env.NODE_VERSION }}
-          cache: 'npm' 
+          cache: "npm"
 
+      # --------------------------------------------------
+      # Install dependencies
+      # --------------------------------------------------
       - name: Install Dependencies
-        run: npm install
+        run: npm ci
 
+      # --------------------------------------------------
+      # Build Vite application
+      #
+      # GitHub Secrets are injected here as environment
+      # variables so Vite can read them through
+      # import.meta.env.VITE_*
+      # --------------------------------------------------
       - name: Build Project
-        run: npm run build 
-        
+        env:
+          VITE_ANALYTICS_ENABLED: ${{ secrets.VITE_ANALYTICS_ENABLED }}
+          VITE_ANALYTICS_DEBUG: ${{ secrets.VITE_ANALYTICS_DEBUG }}
+          VITE_GA_MEASUREMENT_ID: ${{ secrets.VITE_GA_MEASUREMENT_ID }}
+          VITE_CLARITY_PROJECT_ID: ${{ secrets.VITE_CLARITY_PROJECT_ID }}
+        run: npm run build
+
+      # --------------------------------------------------
+      # Deploy dist/ to gh-pages
+      # --------------------------------------------------
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_branch: gh-pages
-          publish_dir: ${{ env.BUILD_DIR }}          
+          publish_dir: ${{ env.BUILD_DIR }}

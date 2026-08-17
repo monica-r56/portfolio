@@ -1,27 +1,48 @@
-import { Toaster } from "@/components/ui/toaster";
-import { Toaster as Sonner } from "@/components/ui/sonner";
-import { TooltipProvider } from "@/components/ui/tooltip";
-import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom"; 
-import Index from "./pages/Index";
-import NotFound from "./pages/NotFound";
+import { useEffect } from "react";
+import { Navbar } from "@/components/Navbar";
+import { Hero } from "@/components/Hero";
+import { ImpactSnapshot } from "@/components/ImpactSnapshot";
+import { About } from "@/components/About";
+import { ExperienceTimeline } from "@/components/ExperienceTimeline";
+import { Projects } from "@/components/Projects";
+import { ResearchSection } from "@/components/ResearchSection";
+import { TechTalks } from "@/components/TechTalks";
+import { CommunitySection } from "@/components/CommunitySection";
+import { Technology } from "@/components/Technology";
+import { Philosophy } from "@/components/Philosophy";
+import { Contact } from "@/components/Contact";
+import { Footer } from "@/components/Footer";
+import { FloatingEmail } from "@/components/FloatingEmail";
+import { initAnalytics } from "@/analytics/analytics";
+import { useAnalyticsTracking } from "@/hooks/use-analytics-tracking";
 
-const queryClient = new QueryClient();
+export function App() {
+  useEffect(() => {
+    initAnalytics();
+  }, []);
 
-const App = () => (
-  <QueryClientProvider client={queryClient}>
-    <TooltipProvider>
-      <Toaster />
-      <Sonner />
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Navigate to="/portfolio" replace />} /> 
-          <Route path="/portfolio/*" element={<Index />} /> 
-          <Route path="*" element={<NotFound />} />
-        </Routes>
-      </BrowserRouter>
-    </TooltipProvider>
-  </QueryClientProvider>
-);
+  useAnalyticsTracking();
+
+  return (
+    <div className="relative min-h-screen bg-[#F8F8F5] text-[#17171A] overflow-x-hidden">
+      <Navbar />
+      <main>
+        <Hero />
+        <ImpactSnapshot />
+        <About />
+        <ExperienceTimeline />
+        <Projects />
+        <ResearchSection />
+        <TechTalks />
+        <CommunitySection />
+        <Technology />
+        <Philosophy />
+        <Contact />
+      </main>
+      <Footer />
+      <FloatingEmail />
+    </div>
+  );
+}
 
 export default App;
