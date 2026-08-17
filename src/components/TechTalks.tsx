@@ -8,10 +8,11 @@ function WorkshopCard({ item }: { item: SpeakingItem }) {
     <div className="reveal group relative bg-white border border-[#E7E7E2] rounded-2xl overflow-hidden card-hover shadow-[0_4px_24px_rgba(23,23,26,0.06)] hover:shadow-[0_12px_40px_rgba(91,124,255,0.12)] transition-all duration-300">
       {/* Gradient accent bar */}
       <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-[#5B7CFF] to-[#8B6DFF] z-10" />
+
       {/* Image */}
       <div className="project-img-wrap relative aspect-[16/9] bg-gradient-to-br from-[#F0F0ED] to-[#E7E7F5] overflow-hidden">
         <img
-          src="public/workshop.jpeg"
+          src={`${import.meta.env.BASE_URL}workshop.jpeg`}
           alt={item.imageAlt || item.title}
           className="w-full h-full object-cover"
           onError={(e) => {
@@ -38,28 +39,45 @@ function WorkshopCard({ item }: { item: SpeakingItem }) {
       {/* Content */}
       <div className="p-6">
         <div className="flex items-center gap-3 mb-3 text-xs text-[#6B6B73]">
-          <span className="flex items-center gap-1"><Calendar className="size-3" /> {item.date}</span>
+          <span className="flex items-center gap-1">
+            <Calendar className="size-3" /> {item.date}
+          </span>
+
           {item.audience && (
             <>
               <span>·</span>
-              <span className="flex items-center gap-1"><Users className="size-3" /> {item.audience}</span>
+              <span className="flex items-center gap-1">
+                <Users className="size-3" /> {item.audience}
+              </span>
             </>
           )}
         </div>
 
-        <h3 className="text-lg font-bold text-[#17171A] tracking-tight mb-2">{item.title}</h3>
-        <p className="text-sm leading-[1.65] text-[#6B6B73] mb-4">{item.description}</p>
+        <h3 className="text-lg font-bold text-[#17171A] tracking-tight mb-2">
+          {item.title}
+        </h3>
+
+        <p className="text-sm leading-[1.65] text-[#6B6B73] mb-4">
+          {item.description}
+        </p>
 
         {item.highlight && (
           <div className="mb-4 rounded-xl bg-gradient-to-br from-[#5B7CFF]/10 to-[#8B6DFF]/10 border border-[#5B7CFF]/20 p-3">
-            <p className="text-xs leading-[1.6] text-[#17171A] font-medium">{item.highlight}</p>
+            <p className="text-xs leading-[1.6] text-[#17171A] font-medium">
+              {item.highlight}
+            </p>
           </div>
         )}
 
         {/* Topics */}
         <div className="flex flex-wrap gap-1.5 mb-4">
           {item.topics.map((t) => (
-            <span key={t} className="text-[11px] py-0.5 px-2 rounded-full bg-white border-2 border-[#5B7CFF]/40 text-[#5B7CFF] shadow-[0_2px_8px_rgba(91,124,255,0.15)] font-medium">{t}</span>
+            <span
+              key={t}
+              className="text-[11px] py-0.5 px-2 rounded-full bg-white border-2 border-[#5B7CFF]/40 text-[#5B7CFF] shadow-[0_2px_8px_rgba(91,124,255,0.15)] font-medium"
+            >
+              {t}
+            </span>
           ))}
         </div>
 
@@ -75,6 +93,7 @@ function WorkshopCard({ item }: { item: SpeakingItem }) {
               <LinkedInIcon className="size-3.5" /> View Post
             </a>
           )}
+
           {item.eventUrl && (
             <a
               href={item.eventUrl}
@@ -93,38 +112,71 @@ function WorkshopCard({ item }: { item: SpeakingItem }) {
 
 function EventCard({ item, index }: { item: EventItem; index: number }) {
   return (
-    <div className={`reveal stagger-${index + 1} group bg-white border border-[#E7E7E2] rounded-2xl p-5 card-hover shadow-[0_2px_16px_rgba(23,23,26,0.05)] hover:shadow-[0_8px_32px_rgba(91,124,255,0.10)] transition-all duration-300 relative overflow-hidden`}>
+    <div
+      className={`reveal stagger-${index + 1} group bg-white border border-[#E7E7E2] rounded-2xl p-5 card-hover shadow-[0_2px_16px_rgba(23,23,26,0.05)] hover:shadow-[0_8px_32px_rgba(91,124,255,0.10)] transition-all duration-300 relative overflow-hidden`}
+    >
       <div className="absolute top-0 left-0 right-0 h-0.5 bg-gradient-to-r from-[#42C7D9] to-[#5B7CFF]" />
+
       <div className="flex items-center gap-2 mb-2">
         <span className="text-[10px] font-semibold px-2 py-0.5 rounded-full bg-gradient-to-r from-[#5B7CFF]/15 to-[#8B6DFF]/15 text-[#5B7CFF] uppercase tracking-wide border border-[#5B7CFF]/20">
           {item.type}
         </span>
+
         <span className="text-xs text-[#6B6B73]">{item.date}</span>
       </div>
-      <h3 className="text-sm font-bold text-[#17171A] mb-1">{item.title}</h3>
-      <p className="text-xs text-[#6B6B73] mb-2">{item.organization}</p>
-      <p className="text-sm leading-[1.6] text-[#6B6B73] mb-3">{item.description}</p>
+
+      <h3 className="text-sm font-bold text-[#17171A] mb-1">
+        {item.title}
+      </h3>
+
+      <p className="text-xs text-[#6B6B73] mb-2">
+        {item.organization}
+      </p>
+
+      <p className="text-sm leading-[1.6] text-[#6B6B73] mb-3">
+        {item.description}
+      </p>
+
       {item.whatILearned && (
         <p className="text-xs leading-[1.5] text-[#6B6B73] italic border-l-2 border-[#5B7CFF]/20 pl-3 mb-3">
           {item.whatILearned}
         </p>
       )}
-      {/* <div className="flex flex-wrap gap-1.5 mb-3">
+
+      {/* Topics */}
+      {/* 
+      <div className="flex flex-wrap gap-1.5 mb-3">
         {item.topics.map((t) => (
-          <span key={t} className="text-[11px] py-0.5 px-2 rounded-full bg-white border-2 border-[#42C7D9]/50 text-[#42C7D9] shadow-[0_2px_8px_rgba(66,199,217,0.18)] font-medium">{t}</span>
+          <span
+            key={t}
+            className="text-[11px] py-0.5 px-2 rounded-full bg-white border-2 border-[#42C7D9]/50 text-[#42C7D9] shadow-[0_2px_8px_rgba(66,199,217,0.18)] font-medium"
+          >
+            {t}
+          </span>
         ))}
-      </div> */}
+      </div>
+      */}
+
       <div className="flex items-center gap-3">
         {item.linkedinPostUrl && (
-          <a href={item.linkedinPostUrl} target="_blank" rel="noopener noreferrer"
-            className="flex items-center gap-1.5 text-xs font-semibold text-white bg-gradient-to-r from-[#0A66C2] to-[#0077b5] rounded-full px-3 py-1.5 transition-all hover:shadow-lg hover:shadow-[#0A66C2]/30">
+          <a
+            href={item.linkedinPostUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-1.5 text-xs font-semibold text-white bg-gradient-to-r from-[#0A66C2] to-[#0077b5] rounded-full px-3 py-1.5 transition-all hover:shadow-lg hover:shadow-[#0A66C2]/30"
+          >
             <LinkedInIcon className="size-3" /> View Post
           </a>
         )}
+
         {item.eventUrl && (
-          <a href={item.eventUrl} target="_blank" rel="noopener noreferrer"
-            className="flex items-center gap-1 text-xs font-medium text-[#6B6B73] hover:text-[#17171A] transition-colors">
-            <ExternalLink className="size-3" /> View Event
+          <a
+            href={item.eventUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-1 text-xs font-medium text-[#6B6B73] hover:text-[#17171A] transition-colors"
+          >
+            <ExternalLink className="size-3.5" /> View Event
           </a>
         )}
       </div>
@@ -146,7 +198,10 @@ export function TechTalks() {
       {/* Top transition from dark research */}
       <div
         className="absolute top-0 left-0 right-0 h-32 pointer-events-none"
-        style={{ background: "linear-gradient(to bottom, rgba(139,109,255,0.04) 0%, transparent 100%)" }}
+        style={{
+          background:
+            "linear-gradient(to bottom, rgba(139,109,255,0.04) 0%, transparent 100%)",
+        }}
       />
 
       <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8">
@@ -156,12 +211,17 @@ export function TechTalks() {
             <div className="w-8 h-px bg-[#5B7CFF]" />
             <span className="section-eyebrow">Tech Talks</span>
           </div>
+
           <h2 className="reveal stagger-1 text-[clamp(1.8rem,3.5vw,2.8rem)] font-bold leading-[1.12] tracking-[-0.02em] text-[#17171A]">
             I Don't Just Build AI. <br />
-            <span className="gradient-text-blue-violet">I Explain It to Aspiring Builders.</span>
+            <span className="gradient-text-blue-violet">
+              I Explain It to Aspiring Builders.
+            </span>
           </h2>
+
           <p className="reveal stagger-2 mt-4 text-[1rem] leading-[1.7] text-[#6B6B73] max-w-[560px]">
-            I enjoy turning complex technologies into practical ideas that aspiring builders can understand, experiment with and use.
+            I enjoy turning complex technologies into practical ideas that
+            aspiring builders can understand, experiment with and use.
           </p>
         </div>
 
@@ -169,8 +229,11 @@ export function TechTalks() {
         {featured.length > 0 && (
           <div className="mb-16">
             <div className="reveal stagger-1 mb-4">
-              <span className="section-eyebrow text-[#5B7CFF]">Featured Workshop</span>
+              <span className="section-eyebrow text-[#5B7CFF]">
+                Featured Workshop
+              </span>
             </div>
+
             <div className="grid lg:grid-cols-2 gap-6">
               {featured.map((item) => (
                 <WorkshopCard key={item.id} item={item} />
@@ -183,10 +246,14 @@ export function TechTalks() {
         <div className="mb-6">
           <div className="reveal flex items-center gap-3 mb-2">
             <div className="w-8 h-px bg-[#5B7CFF]" />
-            <span className="section-eyebrow">Where I Learn, Share & Connect</span>
+            <span className="section-eyebrow">
+              Where I Learn, Share & Connect
+            </span>
           </div>
+
           <p className="reveal stagger-1 text-sm text-[#6B6B73] max-w-[500px] mb-6">
-            Continuous learning, ecosystem participation, technical curiosity and community contribution.
+            Continuous learning, ecosystem participation, technical curiosity
+            and community contribution.
           </p>
         </div>
 
@@ -200,7 +267,10 @@ export function TechTalks() {
       {/* Bottom transition to tint */}
       <div
         className="absolute bottom-0 left-0 right-0 h-24 pointer-events-none"
-        style={{ background: "linear-gradient(to bottom, transparent 0%, var(--surface-tint) 100%)" }}
+        style={{
+          background:
+            "linear-gradient(to bottom, transparent 0%, var(--surface-tint) 100%)",
+        }}
       />
     </section>
   );

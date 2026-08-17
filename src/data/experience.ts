@@ -22,7 +22,6 @@ export const experiences: ExperienceItem[] = [
   {
     id: "autodesk-sde",
     organization: "Autodesk",
-    logo: "public/Autodesk-Emblem.png",
     role: "Software Development Engineer – AI, Data & Automation",
     startDate: "Apr 2025",
     endDate: "Present",
