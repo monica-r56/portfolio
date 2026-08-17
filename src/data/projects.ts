@@ -37,7 +37,7 @@ export const projects: ProjectItem[] = [
     result:
       "A fully functional voice-first coding agent with IDE integration, multi-agent coordination, and hands-free conversational development that eliminates the need to leave the editor.",
     technologies: ["AI Agents", "MCP", "LLMs", "STT/TTS", "GitHub API", "Notion API"],
-    image: "public/codemate.png",
+    image: `${import.meta.env.BASE_URL}codemate.png`,
     imageAlt: "CodeMate voice-native AI pair programmer interface",
     githubUrl: "https://github.com/monica-r56/CodeMate",
     featured: true,
@@ -59,7 +59,7 @@ export const projects: ProjectItem[] = [
     result:
       "A production-quality travel planner that generates personalized, budget-aware itineraries with real data from multiple APIs, rendered with interactive maps.",
     technologies: ["Python", "LangGraph", "FastAPI", "React", "Map APIs", "Weather APIs"],
-    image: "public/autonomad.png",
+    image: `${import.meta.env.BASE_URL}autonomad.png`,
     imageAlt: "Travel Concierge AI travel planning interface with map",
     featured: true,
     category: "AI Agents",
@@ -89,7 +89,7 @@ export const projects: ProjectItem[] = [
       "LinkedIn Job Search",
       "JavaScript",
     ],
-    image: "public/n8n-ai-job.png",
+    image: `${import.meta.env.BASE_URL}n8n-ai-job.png`,
     imageAlt:
       "AI-powered resume-driven job search automation workflow built with n8n",
     githubUrl:
@@ -117,7 +117,7 @@ export const projects: ProjectItem[] = [
     result:
       "Built a working system that classifies vehicular movement with high accuracy across highway and service road segments using GNSS and ML.",
     technologies: ["GNSS", "OpenStreetMap", "Sequential Learning", "Python", "Geospatial Viz", "ML"],
-    image: "public/TollTag.png",
+    image: `${import.meta.env.BASE_URL}TollTag.png`,
     imageAlt: "TollTag geospatial map matching visualization",
     featured: true,
     category: "AI / ML",
@@ -138,7 +138,7 @@ export const projects: ProjectItem[] = [
     result:
       "A published IEEE research contribution (ICOSEC 2025) and a functional educational tool that gives students reliable, source-grounded answers in their preferred language.",
     technologies: ["RAG", "Gemini", "NLP", "Python", "Multilingual NLP", "Vector DB"],
-    image: "public/chatbot.png",
+    image: `${import.meta.env.BASE_URL}chatbot.png`,
     imageAlt: "AI Educational Chatbot interface with multilingual support",
     featured: false,
     category: "AI / NLP",

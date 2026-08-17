@@ -11,9 +11,9 @@ export const siteConfig = {
   github: "https://github.com/monica-r56",
   resume: "https://drive.google.com/file/d/1DkOEf9ee_BKn0Ib9dLZnL31gR9t60ofJ/view?usp=drive_link",
   location: "Bangalore, India",
-  profileImage: "public/googlecloudstage.jpeg",
-  navigationProfile:"public/profile.png",
-  workshopImage: "/workshop.jpeg",
+  profileImage: `${import.meta.env.BASE_URL}googlecloudstage.jpeg`,
+  navigationProfile:`${import.meta.env.BASE_URL}profile.png`,
+  workshopImage: `${import.meta.env.BASE_URL}workshop.jpeg`,
   seo: {
     title: "Monica R. | AI-focused Software Engineer & AI Builder",
     description:

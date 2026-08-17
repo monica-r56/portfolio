@@ -31,7 +31,7 @@ export const speakingEvents: SpeakingItem[] = [
       "AI Agents",
       "n8n Automation",
     ],
-    image: "public/workshop.jpeg",
+    image: `${import.meta.env.BASE_URL}workshop.jpeg`,
     imageAlt: "Monica R. speaking at AI & Agentic AI Workshop",
     featured: true,
     audience: "Aspiring AI builders and developers",
