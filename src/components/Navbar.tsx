@@ -64,12 +64,12 @@ export function Navbar() {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled
-          ? "nav-blur bg-white/50 border-b border-white/60 shadow-[0_10px_35px_rgba(23,23,26,0.06)]"
-          : "nav-blur bg-white/35 border-b border-white/45"
-      }`}
-    >
+  className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+    scrolled
+      ? "nav-blur bg-white/90 backdrop-blur-xl border-b border-white/70 shadow-[0_10px_35px_rgba(23,23,26,0.08)]"
+      : "nav-blur bg-white/75 backdrop-blur-xl border-b border-white/60"
+  }`}
+>
       <nav className="max-w-7xl mx-auto px-6 lg:px-8 h-[72px] flex items-center justify-between">
         {/* Logo with Circular Photo Frame */}
         <button
