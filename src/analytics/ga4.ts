@@ -12,7 +12,6 @@ let loaded = false;
 
 export function initGA4(): void {
   if (!analyticsConfig.enabled || !analyticsConfig.gaMeasurementId) return;
-  if (analyticsConfig.gaMeasurementId === "G-7JFNTM98JX") return;
   if (loaded) return;
 
   const id = analyticsConfig.gaMeasurementId;
@@ -23,12 +22,16 @@ export function initGA4(): void {
   script.onerror = () => console.warn("[Analytics] GA4 script failed to load");
   document.head.appendChild(script);
 
-  window.dataLayer = [];
+  window.dataLayer = window.dataLayer || [];
+
   window.gtag = function (...args: unknown[]) {
     window.dataLayer.push(args);
   };
+
   window.gtag("js", new Date());
-  window.gtag("config", id, { send_page_view: false });
+  window.gtag("config", id, {
+    send_page_view: false,
+  });
 
   loaded = true;
 }

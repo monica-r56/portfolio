@@ -215,6 +215,7 @@ function ExperienceCard({ item }: { item: ExperienceItem }) {
             {/* ================================================= */}
             {/* Technologies */}
             {/* ================================================= */}
+            {item.technologies && (
             <div className="flex flex-wrap gap-2">
               {item.technologies.map((tech, index) => {
                 const gradientVariants = [
@@ -261,6 +262,7 @@ function ExperienceCard({ item }: { item: ExperienceItem }) {
                 );
               })}
             </div>
+            )}
 
           </div>
         </div>
@@ -276,19 +278,8 @@ export function ExperienceTimeline() {
     <section
       id="experience"
       ref={ref}
-      className="relative py-14 overflow-hidden"
-      style={{ background: "var(--surface-tint)" }}
+      className="relative py-14"
     >
-
-      {/* Top transition gradient */}
-      <div
-        className="absolute top-0 left-0 right-0 h-24 pointer-events-none"
-        style={{
-          background:
-            "linear-gradient(to bottom, var(--background) 0%, transparent 100%)",
-        }}
-      />
-
       <div className="relative z-10 max-w-5xl mx-auto px-6 lg:px-8">
 
         {/* Section heading */}
@@ -360,16 +351,6 @@ export function ExperienceTimeline() {
 
         </div>
       </div>
-
-      {/* Bottom transition gradient */}
-      <div
-        className="absolute bottom-0 left-0 right-0 h-24 pointer-events-none"
-        style={{
-          background:
-            "linear-gradient(to top, var(--background) 0%, transparent 100%)",
-        }}
-      />
-
     </section>
   );
 }

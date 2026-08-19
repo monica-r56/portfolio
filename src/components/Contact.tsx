@@ -3,6 +3,7 @@ import { useReveal } from "@/hooks/use-reveal";
 import { siteConfig } from "@/data/profile";
 import { Mail, FileDown, ArrowRight, Loader2 } from "lucide-react";
 import { LinkedInIcon, GitHubIcon } from "@/components/icons/BrandIcons";
+import { AnimatedSectionBackground } from "@/components/AnimatedSectionBackground";
 import { trackButtonClick, trackResumeDownload } from "@/analytics/events";
 
 const contactOptions = [
@@ -78,31 +79,9 @@ export function Contact() {
       id="contact"
       ref={ref}
       className="relative py-12 sm:py-14 overflow-hidden"
-      style={{
-        background: "var(--dark-feature)",
-        color: "var(--dark-feature-foreground)",
-      }}
+      style={{ color: "var(--dark-feature-foreground)" }}
     >
-      {/* ------------------------------------------------ */}
-      {/* Ambient background */}
-      {/* ------------------------------------------------ */}
-
-      <div
-        className="ambient-blob absolute top-0 left-1/4 w-[500px] h-[500px] opacity-[0.07] animate-ambient pointer-events-none"
-        style={{
-          background:
-            "radial-gradient(circle, #5B7CFF 0%, transparent 70%)",
-        }}
-      />
-
-      <div
-        className="ambient-blob absolute bottom-0 right-1/4 w-[450px] h-[450px] opacity-[0.05] animate-ambient pointer-events-none"
-        style={{
-          background:
-            "radial-gradient(circle, #8B6DFF 0%, transparent 70%)",
-          animationDelay: "10s",
-        }}
-      />
+      <AnimatedSectionBackground variant="contact" />
 
       <div className="relative z-10 max-w-5xl mx-auto px-5 sm:px-6 lg:px-8 text-center">
         {/* ------------------------------------------------ */}

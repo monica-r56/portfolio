@@ -152,8 +152,7 @@ export function Projects() {
     <section
       id="projects"
       ref={ref}
-      className="relative py-14 overflow-hidden"
-      style={{ background: "var(--background)" }}
+      className="relative py-14"
     >
       <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8">
         <div className="mb-14 max-w-2xl">
@@ -175,12 +174,6 @@ export function Projects() {
           ))}
         </div>
       </div>
-
-      {/* Bottom violet glow transition to dark research */}
-      <div
-        className="absolute bottom-0 left-0 right-0 h-32 pointer-events-none"
-        style={{ background: "linear-gradient(to bottom, transparent 0%, rgba(139,109,255,0.06) 100%)" }}
-      />
     </section>
   );
 }

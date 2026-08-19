@@ -34,15 +34,8 @@ export function ImpactSnapshot() {
     <section
       id="impact"
       ref={sectionRef}
-      className="relative py-24 overflow-hidden"
-      style={{ background: "var(--background)" }}
+      className="relative py-24"
     >
-      {/* Subtle ambient tint */}
-      <div
-        className="absolute inset-0 opacity-[0.04]"
-        style={{ background: "radial-gradient(ellipse 80% 60% at 50% 100%, #5B7CFF 0%, transparent 70%)" }}
-      />
-
       <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8">
         {/* Heading */}
         <div className="mb-14 max-w-2xl">

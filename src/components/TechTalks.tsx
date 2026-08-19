@@ -184,28 +184,21 @@ function EventCard({ item, index }: { item: EventItem; index: number }) {
   );
 }
 
-export function TechTalks() {
+export function FeaturedWorkshop() {
   const ref = useReveal<HTMLElement>();
   const featured = speakingEvents.filter((e) => e.featured);
+
+  if (featured.length === 0) {
+    return null;
+  }
 
   return (
     <section
       id="tech-talks"
       ref={ref}
-      className="relative py-14 overflow-hidden"
-      style={{ background: "var(--background)" }}
+      className="relative py-14"
     >
-      {/* Top transition from dark research */}
-      <div
-        className="absolute top-0 left-0 right-0 h-32 pointer-events-none"
-        style={{
-          background:
-            "linear-gradient(to bottom, rgba(139,109,255,0.04) 0%, transparent 100%)",
-        }}
-      />
-
       <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8">
-        {/* Heading */}
         <div className="mb-14 max-w-3xl">
           <div className="reveal flex items-center gap-3 mb-4">
             <div className="w-8 h-px bg-[#5B7CFF]" />
@@ -225,24 +218,32 @@ export function TechTalks() {
           </p>
         </div>
 
-        {/* Featured workshop */}
-        {featured.length > 0 && (
-          <div className="mb-16">
-            <div className="reveal stagger-1 mb-4">
-              <span className="section-eyebrow text-[#5B7CFF]">
-                Featured Workshop
-              </span>
-            </div>
+        <div className="reveal stagger-3 mb-4">
+          <span className="section-eyebrow text-[#5B7CFF]">
+            Featured Workshop
+          </span>
+        </div>
 
-            <div className="grid lg:grid-cols-2 gap-6">
-              {featured.map((item) => (
-                <WorkshopCard key={item.id} item={item} />
-              ))}
-            </div>
-          </div>
-        )}
+        <div className="grid lg:grid-cols-2 gap-6">
+          {featured.map((item) => (
+            <WorkshopCard key={item.id} item={item} />
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
 
-        {/* Events / appearances */}
+export function TechTalks() {
+  const ref = useReveal<HTMLElement>();
+
+  return (
+    <section
+      id="speaking-events"
+      ref={ref}
+      className="relative py-14"
+    >
+      <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8">
         <div className="mb-6">
           <div className="reveal flex items-center gap-3 mb-2">
             <div className="w-8 h-px bg-[#5B7CFF]" />
@@ -263,15 +264,6 @@ export function TechTalks() {
           ))}
         </div>
       </div>
-
-      {/* Bottom transition to tint */}
-      <div
-        className="absolute bottom-0 left-0 right-0 h-24 pointer-events-none"
-        style={{
-          background:
-            "linear-gradient(to bottom, transparent 0%, var(--surface-tint) 100%)",
-        }}
-      />
     </section>
   );
 }

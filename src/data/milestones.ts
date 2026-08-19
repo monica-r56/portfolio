@@ -51,6 +51,16 @@ export const credibilityItems: CredibilityItem[] = [
     label: "Turning AI Into Impact",
   },
   {
+    id: "global",
+    value: "Global",
+    label: "Building Products Used Worldwide",
+  },
+  {
+    id: "speaker",
+    value: "Speaker",
+    label: "Workshop & Technical Talks",
+  },
+  {
     id: "hackathons",
     value: `${hackathonCount}×`,
     label: "Hackathon Builder",
@@ -66,11 +76,6 @@ export const credibilityItems: CredibilityItem[] = [
     value: "GSSoC'26",
     label: "Open Source",
     sublabel: "Contributor & Ambassador",
-  },
-  {
-    id: "speaker",
-    value: "Speaker",
-    label: "Workshop & Technical Talks",
   },
 ];
 

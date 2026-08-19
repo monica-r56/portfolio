@@ -49,8 +49,7 @@ export function Technology() {
     <section
       id="technology"
       ref={ref}
-      className="relative py-14 overflow-hidden"
-      style={{ background: "var(--background)" }}
+      className="relative py-10"
     >
       <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8">
         <div className="mb-14 max-w-2xl">

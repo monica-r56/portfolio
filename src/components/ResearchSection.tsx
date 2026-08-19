@@ -1,6 +1,7 @@
 import { useReveal } from "@/hooks/use-reveal";
 import { publications, type PublicationItem } from "@/data/publications";
 import { hackathons } from "@/data/speaking";
+import { AnimatedSectionBackground } from "@/components/AnimatedSectionBackground";
 import { ExternalLink, FileText, Trophy, Zap } from "lucide-react";
 
 function PublicationCard({ pub, index }: { pub: PublicationItem; index: number }) {
@@ -18,6 +19,7 @@ function PublicationCard({ pub, index }: { pub: PublicationItem; index: number }
           </div>
           <h3 className="text-base font-semibold text-white leading-snug mb-2">{pub.title}</h3>
           <p className="text-sm leading-[1.6] text-white/50 mb-4">{pub.description}</p>
+          {pub.tags && (
           <div className="flex flex-wrap gap-1.5">
             {pub.tags.map((tag) => (
               <span key={tag} className="text-[11px] px-2 py-0.5 rounded-full bg-white/5 border border-white/10 text-white/50">
@@ -25,6 +27,7 @@ function PublicationCard({ pub, index }: { pub: PublicationItem; index: number }
               </span>
             ))}
           </div>
+          )}
           {pub.publicationUrl && (
             <div className="mt-4">
               <a
@@ -51,19 +54,15 @@ export function ResearchSection() {
       id="research"
       ref={ref}
       className="relative py-14 overflow-hidden"
-      style={{ background: "var(--dark-feature)", color: "var(--dark-feature-foreground)" }}
+      style={{ color: "var(--dark-feature-foreground)" }}
     >
+      <AnimatedSectionBackground variant="research" />
+
       {/* Top transition: violet glow from projects */}
       <div
-        className="absolute top-0 left-0 right-0 h-40 pointer-events-none"
+        className="absolute top-0 left-0 right-0 h-40 pointer-events-none z-[1]"
         style={{ background: "linear-gradient(to bottom, rgba(139,109,255,0.08) 0%, transparent 100%)" }}
       />
-
-      {/* Ambient blobs */}
-      <div className="ambient-blob absolute top-1/4 -left-32 w-[500px] h-[500px] opacity-[0.08] animate-ambient"
-        style={{ background: "radial-gradient(circle, #8B6DFF 0%, transparent 70%)" }} />
-      <div className="ambient-blob absolute bottom-1/4 -right-32 w-[500px] h-[500px] opacity-[0.06] animate-ambient"
-        style={{ background: "radial-gradient(circle, #42C7D9 0%, transparent 70%)", animationDelay: "7s" }} />
 
       <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8">
         {/* Heading */}
@@ -135,7 +134,7 @@ export function ResearchSection() {
 
       {/* Bottom transition: dark → violet → off-white */}
       <div
-        className="absolute bottom-0 left-0 right-0 h-40 pointer-events-none"
+        className="absolute bottom-0 left-0 right-0 h-40 pointer-events-none z-[1]"
         style={{ background: "linear-gradient(to bottom, transparent 0%, rgba(139,109,255,0.10) 40%, rgba(248,248,245,0.15) 100%)" }}
       />
     </section>

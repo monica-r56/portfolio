@@ -8,14 +8,9 @@ export function Philosophy() {
     <section
       id="philosophy"
       ref={ref}
-      className="relative pb-10 overflow-hidden"
-      style={{ background: "var(--background)" }}
+      className="relative pb-10"
     >
-      {/* Subtle ambient */}
-      <div className="ambient-blob absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[400px] opacity-[0.03]"
-        style={{ background: "radial-gradient(ellipse, #8B6DFF 0%, transparent 70%)" }} />
-
-      <div className="relative z-10 max-w-4xl mx-auto px-6 lg:px-8 text-center">
+      <div className="relative z-10 max-w-4xl mx-auto px-6 py-4 lg:px-8 text-center">
         <div className="reveal flex items-center justify-center gap-3 mb-6">
           <div className="w-8 h-px bg-[#5B7CFF]" />
           <span className="section-eyebrow">Philosophy</span>
