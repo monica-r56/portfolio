@@ -17,7 +17,7 @@ export const impactMetrics: Milestone[] = [
     id: "uptime",
     label: "Production uptime",
     value: "99.9%",
-    description: "Uptime maintained for production backend and API infrastructure at Talview.",
+    description: "Uptime maintained for production backend and API infrastructure.",
   },
   {
     id: "efficiency",

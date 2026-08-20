@@ -79,8 +79,6 @@ export function Hero() {
               <span className="hero-headline-shimmer hero-headline-shimmer--dark">I Build AI for </span>
               <br className="hidden sm:block" />
               <span className="hero-headline-shimmer hero-headline-shimmer--gradient">A Smarter Tomorrow. </span>
-              {/* <br className="hidden sm:block" />
-              <span className="hero-headline-shimmer hero-headline-shimmer--dark">the Demo.</span> */}
             </h1>
 
             {/* Tagline */}
